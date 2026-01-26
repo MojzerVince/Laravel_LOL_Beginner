@@ -9,14 +9,12 @@
 </head>
 <body>
     <h1>Üdv a niggerek szurdokában</h1>
-    <h2>Milyen érzés izzadtseggűnek és buzinak lenni?</h2>
     @yield('pageTitle')
     <hr>
     <div class="nav-container">
         <a href="{{ route('characters.index') }}" class="lol-characters">Szerezd meg az összes négert</a>
     </div>
     <div class="app-container">
-        <p>Hatalmas discord mod dózist fogsz kapni</p>
         @yield('content')
     </div>
 </body>
