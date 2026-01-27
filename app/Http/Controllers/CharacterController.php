@@ -31,6 +31,11 @@ class CharacterController extends Controller
     public function store(StoreCharacterRequest $request)
     {
         Character::create($request->all());
+
+        /*$newCharacter = new Character($request->all());
+        $newCharacter->ballanced = true;
+        $newCharacter->save();*/
+        return redirect()->route('characters.index')->with('msg', '{request->name} created successfully!');
     }
 
     /**
@@ -46,7 +51,7 @@ class CharacterController extends Controller
      */
     public function edit(Character $character)
     {
-        //
+        return view('characters.edit', ['character' => $character]);
     }
 
     /**
@@ -54,7 +59,7 @@ class CharacterController extends Controller
      */
     public function update(UpdateCharacterRequest $request, Character $character)
     {
-        //
+        return redirect()->route('characters.index')->with('msg', '{request->name} created successfully!');
     }
 
     /**

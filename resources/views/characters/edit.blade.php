@@ -14,6 +14,7 @@
 
         <form action="{{ route('characters.store') }}" method="post">
             @csrf
+            @method('put')
             <div class="form-group">
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" value="Buzeráns">
@@ -36,7 +37,7 @@
                     cols="50">NIGGERNIGGERNIGGERNIGGERNIGGERNIGGERNIGGERNIGGERNIGGERNIGGERNIGGERNIGGERNIGGERNIGGERNIGGERNIGGER</textarea>
             </div>
             <div style="text-align: center">
-                <button class="addButton">Add new cigány</button>
+                <button class="addButton">Szerkeszt cigány</button>
             </div>
         </form>
     </div>

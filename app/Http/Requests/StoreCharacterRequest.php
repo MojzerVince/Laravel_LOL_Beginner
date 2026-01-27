@@ -22,7 +22,11 @@ class StoreCharacterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => ['required', 'string', 'max:255', 'unique:characters,name'],
+            'level' => ['required', 'integer', 'between:1,18'],
+            'health' => ['required', 'numeric', 'decimal:0,2', 'min:648'],
+            'ballanced' => ['boolean'],
+            'description' => ['nullable', 'string', 'max:250'],
         ];
     }
 }
