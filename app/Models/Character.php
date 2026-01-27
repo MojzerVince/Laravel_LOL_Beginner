@@ -11,4 +11,12 @@ class Character extends Model
     /** @use HasFactory<\Database\Factories\CharacterFactory> */
     use HasFactory;
     use SoftDeletes;
+
+    protected $fillable = [
+        'name',
+        'level',
+        'health',
+        'ballanced',
+        'description'
+    ];
 }

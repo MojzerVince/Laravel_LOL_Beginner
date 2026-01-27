@@ -9,3 +9,5 @@ Route::get('/', function () {
 
 //Route::get('/GetAllCharacter', [CharacterController::class, 'index']);
 Route::resource('/characters', CharacterController::class);
+
+Route::resource('/create', CharacterController::class);

@@ -13,6 +13,7 @@
     <hr>
     <div class="nav-container">
         <a href="{{ route('characters.index') }}" class="lol-characters">Szerezd meg az összes négert</a>
+        <a href="{{ route('characters.create') }}" class="lol-add">Adj hozzá négert</a>
     </div>
     <div class="app-container">
         @yield('content')
