@@ -22,7 +22,7 @@ class CharacterController extends Controller
      */
     public function create()
     {
-        //
+        return view("characters.create");
     }
 
     /**
@@ -30,7 +30,9 @@ class CharacterController extends Controller
      */
     public function store(StoreCharacterRequest $request)
     {
-        //
+        /* Basic verzió, minden input mező stimmel */
+        /* Az input mező neve ugyanaz mint az oszlopok neve és minden kötelező mező ki van töltve az inputok által */
+        Character::create($request->all());
     }
 
     /**

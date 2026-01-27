@@ -94,12 +94,77 @@ table {
     font-size: 23px;
 }
 
-td, th {
+td,
+th {
     border: 1px solid var(--sand);
     padding: 5px;
 }
 
-.datarow:hover { /* tr class */
+.datarow:hover {
+    /* tr class */
     cursor: pointer;
     background-color: var(--kek);
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    background: black;
+    border: 2px solid #e3b95c;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+    background: var(--kek);
+}
+
+/* Form styles */
+textarea {
+    resize: none;
+}
+
+.app-container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 100%;
+}
+
+.form-container {
+    align-items: center;
+    border: 1px solid var(--sand);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 10%;
+    padding: 25px;
+}
+
+form .form-group {
+    margin-bottom: 15px;
+}
+
+form .form-group-checkbox {
+    margin-bottom: 15px;
+}
+
+form .form-group-checkbox label {
+    transform: translateY(25%);
+    position: absolute;
+}
+form .form-group-checkbox input {
+    transform: translateX(350%);
+    position: relative;
+}
+
+form .form-group label {
+    display: block;
+    width: 100%;
+}
+
+form .form-group input {
+    display: block;
+    width: 100%;
 }

@@ -9,9 +9,9 @@ class StoreCharacterRequest extends FormRequest
     /**
      * Determine if the user is authorized to make this request.
      */
-    public function authorize(): bool
+    public function authorize(): bool //ki mit csinálhat
     {
-        return false;
+        return true;
     }
 
     /**
@@ -19,7 +19,7 @@ class StoreCharacterRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
-    public function rules(): array
+    public function rules(): array //Mit és hogyan validálok
     {
         return [
             //

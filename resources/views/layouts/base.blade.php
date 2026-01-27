@@ -16,6 +16,7 @@
 
     <div class="nav-container">
         <a href="{{ route("characters.index") }}" class="lol-accept-btn">Get All Characters</a>
+        <a href="{{ route("characters.create") }}" class="lol-accept-btn">Add new Character</a>
     </div>
 
     <div class="app-container">

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string("name")->unique();
             $table->integer("level");
             $table->double("health")->default(100.00);
-            $table->boolean("ballanced");
+            $table->boolean("ballanced")->default(false);
             $table->text("description")->nullable();
             $table->timestamps(); //Created_at és Updated_at
             $table->softDeletes(); //deleted_at
