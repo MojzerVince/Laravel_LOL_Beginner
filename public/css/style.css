@@ -130,6 +130,7 @@ textarea {
     flex-direction: column;
     justify-content: start;
     width: 100%;
+    margin-top: 25px;
 }
 
 .form-container {
@@ -138,7 +139,6 @@ textarea {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 10%;
     padding: 25px;
 }
 
@@ -167,4 +167,15 @@ form .form-group label {
 form .form-group input {
     display: block;
     width: 100%;
+}
+
+.error-label { 
+    color: var(--kek);
+    font-weight: bolder;
+}
+
+.actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }

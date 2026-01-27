@@ -31,7 +31,7 @@ class CharacterSeeder extends Seeder
         ]);
 
         //Factory teljesen véletlenszerűen generált
-        Character::factory(10)->create();
+        Character::factory(3)->create();
 
         //Modell használata, insert paranccsal
         Character::insert([
