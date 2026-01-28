@@ -30,12 +30,9 @@ class CharacterController extends Controller
      */
     public function store(StoreCharacterRequest $request)
     {
+        /* Basic verzió, minden input mező stimmel */
+        /* Az input mező neve ugyanaz mint az oszlopok neve és minden kötelező mező ki van töltve az inputok által */
         Character::create($request->all());
-
-        /*$newCharacter = new Character($request->all());
-        $newCharacter->ballanced = true;
-        $newCharacter->save();*/
-        return redirect()->route('characters.index')->with('msg', '{request->name} created successfully!');
     }
 
     /**

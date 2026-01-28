@@ -7,7 +7,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//Route::get('/GetAllCharacter', [CharacterController::class, 'index']);
+//Route::get('/GetAllCharacter', [CharacterController::class, "index"]);
 Route::resource('/characters', CharacterController::class);
-
-Route::resource('/create', CharacterController::class);

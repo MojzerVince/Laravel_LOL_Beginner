@@ -2,41 +2,32 @@
 
 @section('content')
     <div class="form-container">
-        @if($errors->any())
-            <div class="error-container">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
-
-        <form action="{{ route('characters.store') }}" method="post">
+        <form action="{{ route("characters.store") }}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" id="name" name="name" value="Buzeráns">
+                <input type="text" name="name" value="Heimerdinger">
             </div>
             <div class="form-group">
                 <label for="level">Level</label>
-                <input type="number" id="level" name="level" value="300">
+                <input type="number" name="level" value="6">
             </div>
             <div class="form-group">
                 <label for="health">Health</label>
-                <input type="number" id="health" name="health" value="500">
+                <input type="number" name="health" value="1234">
             </div>
             <div class="form-group-checkbox">
-                <label for="ballanced">Ballanced</label>
-                <input type="checkbox" id="ballanced" name="ballanced" checked>
+                <label for="ballanced">Ballanced ?</label>
+                <input type="checkbox" name="ballanced" value="1">
             </div>
             <div class="form-group">
                 <label for="description">Description</label>
-                <textarea name="description" rows="4"
-                    cols="50">NIGGERNIGGERNIGGERNIGGERNIGGERNIGGERNIGGERNIGGERNIGGERNIGGERNIGGERNIGGERNIGGERNIGGERNIGGERNIGGER</textarea>
+                <textarea name="description" rows="7" cols="50">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi, autem minima est ratione ex libero illo porro. Similique dolor repellendus veniam sunt dicta earum ea aperiam dolores, facere nihil numquam.
+                    </textarea>
             </div>
             <div style="text-align: center">
-                <button class="addButton">Add new cigány</button>
+                <button class="lol-accept-btn">Add new character</button>
             </div>
         </form>
     </div>
