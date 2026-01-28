@@ -22,11 +22,19 @@ class StoreCharacterRequest extends FormRequest
     public function rules(): array //Mit és hogyan validálok
     {
         return [
-            'name' => ['required', 'string', 'max:255', 'unique:characters,name'],
-            'level' => ['required', 'integer', 'between:1,18'],
-            'health' => ['required', 'numeric', 'decimal:0,2', 'min:648'],
-            'ballanced' => ['boolean'],
-            'description' => ['nullable', 'string', 'max:250'],
+            "name" => ["required", "string", "max:255", "unique:characters,name"],
+            "level" => ["required", "integer", "between:1,18"],
+            "health" => ["required", "numeric", "decimal:0,2", "min:648"],
+            "ballanced" => ["boolean"],
+            "description" => ["string", "max:250"]
+        ];
+    }
+
+    /* Custom error messages */
+    public function messages()
+    {
+        return [
+            "name.required" => "A név mező kitöltése kötelező"
         ];
     }
 }

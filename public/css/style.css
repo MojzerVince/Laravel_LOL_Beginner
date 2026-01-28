@@ -472,3 +472,14 @@ table caption {
 .form-container input[type="submit"]:active {
     transform: scale(0.98);
 }
+
+.error-label {
+    color: var(--kek);
+    font-weight: bolder;
+}
+
+.actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}

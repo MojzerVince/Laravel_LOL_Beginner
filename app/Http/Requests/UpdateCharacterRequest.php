@@ -22,11 +22,11 @@ class UpdateCharacterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'string', 'max:255', 'unique:characters,name,' . $this->character->id],
-            'level' => ['required', 'integer', 'between:1,18'],
-            'health' => ['required', 'numeric', 'decimal:0,2', 'min:648'],
-            'ballanced' => ['boolean'],
-            'description' => ['nullable', 'string', 'max:250'],
+            "name" => ["required", "string", "max:255", "unique:characters,name,{$this->character->id}"], /* kiveszem a meghívó karakter-t id alapján a unique szabály alól */
+            "level" => ["required", "integer", "between:1,18"],
+            "health" => ["required", "numeric", "decimal:0,2", "min:648"],
+            "ballanced" => ["boolean"],
+            "description" => ["string", "max:250"]
         ];
     }
 }

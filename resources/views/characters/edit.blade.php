@@ -2,7 +2,9 @@
 
 @section('content')
     <div class="form-container">
-        @if($errors->any())
+
+        {{-- Összes error kilistázása --}}
+        @if ($errors->any())
             <div class="error-container">
                 <ul>
                     @foreach ($errors->all() as $error)

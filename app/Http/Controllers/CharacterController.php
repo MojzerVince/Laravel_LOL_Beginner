@@ -33,6 +33,15 @@ class CharacterController extends Controller
         /* Basic verzió, minden input mező stimmel */
         /* Az input mező neve ugyanaz mint az oszlopok neve és minden kötelező mező ki van töltve az inputok által */
         Character::create($request->all());
+
+        /* Objektum felőli megközelítés, amennyiben tárolás előtt valamit csinálni kell */
+        /* $newCharacter = new Character($request->all());
+        $newCharacter->ballanced = true;
+        $newCharacter->secondTESTname = $request->name;
+        $newCharacter->save(); */
+
+        //return back(); //Visszaküldi oda a usert, ahonnan a kérés jött
+        return redirect()->route("characters.index")->with("msg", "{$request->name} was added successfuly to the database.");
     }
 
     /**
@@ -40,7 +49,7 @@ class CharacterController extends Controller
      */
     public function show(Character $character)
     {
-        //
+        return view("characters.show", ["character" => $character]);
     }
 
     /**
@@ -56,7 +65,9 @@ class CharacterController extends Controller
      */
     public function update(UpdateCharacterRequest $request, Character $character)
     {
-        return redirect()->route('characters.index')->with('msg', '{request->name} created successfully!');
+        $character->update($request->all());
+
+        return redirect()->route("characters.index")->with("msg", "{$request->name} was updated successfuly in the database.");
     }
 
     /**
@@ -64,6 +75,7 @@ class CharacterController extends Controller
      */
     public function destroy(Character $character)
     {
-        //
+        $character->delete();
+        return redirect()->route("characters.index")->with("msg", "{$character->name} was deleted successfuly from the database.");
     }
 }
