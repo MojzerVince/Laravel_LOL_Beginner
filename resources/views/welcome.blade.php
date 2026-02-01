@@ -1,6 +1,6 @@
-<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +8,7 @@
     <title>LOL</title>
     <link rel="stylesheet" href="{{ asset("css/style.css") }}">
 </head>
+
 <body>
     <h1>Üdv a niggerek szurdokában</h1>
     <h2>Milyen érzés izzadtseggűnek és buzinak lenni?</h2>
@@ -21,15 +22,5 @@
         @yield('content')
     </div>
 </body>
+
 </html>
-=======
-@extends('layouts.base')
-
-@section('pageTitle')
-    <h5>You will suffer from massive toxicity</h5>
-@endsection
-
-@section('content')
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis natus quasi necessitatibus magni iusto quibusdam magnam, officiis vitae possimus impedit aliquid aut labore, voluptatum harum nesciunt eaque iure illum deleniti!</p>
-@endsection
->>>>>>> 80badc49a2feb325d92c21e963cee573b85276bb

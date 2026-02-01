@@ -29,6 +29,9 @@ class CharacterPolicy
      */
     public function create(User $user): bool
     {
+        if ($user->role == 'manager') {
+            return true;
+        }
         return false;
     }
 
@@ -37,7 +40,7 @@ class CharacterPolicy
      */
     public function update(User $user, Character $character): bool
     {
-        return false;
+        return $user->id === $character->user_id;
     }
 
     /**
@@ -62,5 +65,14 @@ class CharacterPolicy
     public function forceDelete(User $user, Character $character): bool
     {
         return false;
+    }
+
+    public function before(User $user): bool|null
+    {
+        if ($user->role == 'admin') {
+            return true;
+        } else {
+            return null;
+        }
     }
 }

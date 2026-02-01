@@ -19,6 +19,9 @@ return new class extends Migration {
             $table->text("description")->nullable();
             $table->timestamps(); //Created_at és Updated_at
             $table->softDeletes(); //deleted_at
+            $table->foreignId('created_by')->nullable()->constrained('users', 'id');
+            $table->foreignId('updated_by')->nullable()->constrained('users', 'id');
+            $table->foreignId('deleted_by')->nullable()->constrained('users', 'id');
         });
     }
 

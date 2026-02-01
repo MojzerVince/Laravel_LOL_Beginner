@@ -22,6 +22,9 @@ class CharacterController extends Controller
      */
     public function create()
     {
+        if (auth()->check() == false || auth()->user()->cannot('create', Character::class)) {
+            abort(403, "You are not authorized to create a new character.");
+        }
         return view('characters.create');
     }
 
@@ -77,5 +80,17 @@ class CharacterController extends Controller
     {
         $character->delete();
         return redirect()->route("characters.index")->with("msg", "{$character->name} was deleted successfuly from the database.");
+    }
+
+    public function trashed()
+    {
+        $trashedCharacters = Character::onlyTrashed()->get();
+        return view('characters.trashed', ['characters' => $trashedCharacters]);
+    }
+
+    public function restore(Character $character)
+    {
+        $character->restore();
+        return redirect()->route("characters.index")->with("msg", "{$character->name} was restored successfuly in the database.");
     }
 }
